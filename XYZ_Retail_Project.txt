@@ -1,0 +1,236 @@
+Task 1: Sales Data Summary
+# Task 1
+cat_a = 150
+cat_b = 120
+
+total = cat_a + cat_b
+diff = abs(cat_a - cat_b)
+ratio = round(cat_a / cat_b, 2)
+
+print("Category A:", cat_a)
+print("Category B:", cat_b)
+print("Total Units Sold:", total)
+print("Difference:", diff)
+print("Ratio:", ratio)
+
+
+-----------------------------------------------------------------------------------------------------------
+
+Task 2: Customer Age Data
+# Task 2
+name = "John Doe"
+age = 30
+
+print("Customer Age:", age)
+print(f"Dear {name}, at {age}, you’re eligible for our premium loyalty program.")
+
+----------------------------------------------------------------------------------------------------------
+
+Task 3: Product List Management
+# Task 3
+product_prices = [50, 120, 30, 200, 90, 150, 180]
+premium_price = 250
+
+highest = max(product_prices)
+lowest = min(product_prices)
+
+mid = product_prices.copy()
+mid.remove(lowest)
+mid.remove(highest)
+
+updated = product_prices + [premium_price]
+
+print("Highest Price:", highest)
+print("Lowest Price:", lowest)
+print("Mid-Range Products:", mid)
+print("Updated List:", updated)
+
+
+---------------------------------------------------------------------------------------------------------------
+
+Task 4: Inventory Lookup
+# Task 4
+product_info = {
+    "product_name": "Wireless Mouse",
+    "SKU": "WM-12345",
+    "price": 25.99,
+    "category": "Electronics"
+}
+
+print("Product Name:", product_info["product_name"])
+print("Product SKU:", product_info["SKU"])
+
+
+------------------------------------------------------------------------------------------------------------------
+
+Task 5: Stock Level Alert System
+# Task 5
+threshold = 20
+stock = 10
+if stock < threshold:
+    print("Reorder Now")
+else:
+    print("Stock is sufficient")
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+Task 6: Sales Report Formatting
+# Task 6
+products_sold = ["laptop", "mouse", "keyboard", "monitor", "printer"]
+
+# for loop
+for p in products_sold:
+    print(p.upper())
+
+# while loop
+i = 0
+while i < len(products_sold):
+    print(products_sold[i].upper())
+    i += 1
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+Task 7: Area Calculation for Store Layout
+# Task 7
+length = 20
+width = 15
+area = length * width
+print("The area is", area, "square meters")
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+Task 8: Customer Feedback Analysis
+# Task 8
+def count_vowels(text: str, include_y: bool = True) -> int:
+    vowels = set("aeiouAEIOU" + ("yY" if include_y else ""))
+    return sum(1 for ch in text if ch in vowels)
+
+def reverse_text(text: str) -> str:
+    return text[::-1]
+
+feedback = "The service was excellent and very quick!"
+
+print("Customer Feedback Analysis:")
+print("Original Feedback:", feedback)
+print("Number of Vowels:", count_vowels(feedback, include_y=True))  # -> 13
+print("Reversed Feedback:", reverse_text(feedback))
+
+------------------------------------------------------------------------------------------------------------------
+
+Task 9: Price Filtering Tool
+# Task 9
+product_prices = [150, 85, 300, 120, 45, 200]
+threshold = 100
+
+eligible = []
+for p in product_prices:
+    if p < threshold:
+        eligible.append(p)
+
+print("Eligible for discount:", eligible)
+
+
+------------------------------------------------------------------------------------------------------------------
+
+Task 10: Daily Sales Average
+# Task 10
+daily_sales = [1200, 1500, 1100, 1800, 1700, 1600, 1400]
+avg = sum(daily_sales) / len(daily_sales)
+print("Average Daily Sales:", round(avg, 2))
+
+
+--------------------------------------------------------------------------------------------------------------
+
+Task 11: Customer Segmentation
+# Task 11
+spendings = [200, 800, 1500, 3000, 450, 1200]
+
+for i, s in enumerate(spendings, start=1):
+    if s < 500:
+        cat = "Low"
+    elif s < 1500:
+        cat = "Medium"
+    else:
+        cat = "High"
+    print(f"Customer {i}: Spending = ${s} -> Category: {cat}")
+
+
+-------------------------------------------------------------------------------------------------------------
+
+Task 12: Discount Calculation
+# Task 12
+products = [
+    {"name": "Product A", "original_price": 100, "discount": 10},
+    {"name": "Product B", "original_price": 250, "discount": 20},
+    {"name": "Product C", "original_price": 75, "discount": 15},
+    {"name": "Product D", "original_price": 150, "discount": 5}
+]
+
+for i, p in enumerate(products, 1):
+    final = p["original_price"] * (1 - p["discount"]/100)
+    print(f"Product {i}: Original = ${p['original_price']}, "
+          f"Discount = {p['discount']}%, Final = ${round(final,2)}")
+
+--------------------------------------------------------------------------------------------------------------
+
+Task 13: Customer Feedback Sentiment Analysis
+# Task 13
+feedback = "I am very happy with the service. It was a good experience!"
+positives = ["good", "happy", "excellent", "great"]
+negatives = ["bad", "disappointed", "poor", "terrible"]
+
+text = feedback.lower()
+sentiment = "Neutral"
+
+for w in positives:
+    if w in text:
+        sentiment = "Positive"
+
+for w in negatives:
+    if w in text:
+        sentiment = "Negative"
+
+print("Sentiment:", sentiment)
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+Task 14: Employee Salary Increment Calculator
+# Task 14
+employees = {
+    "Alice": {"salary": 50000, "rating": "Excellent"},
+    "Bob": {"salary": 40000, "rating": "Good"},
+    "Charlie": {"salary": 45000, "rating": "Average"},
+    "David": {"salary": 35000, "rating": "Poor"}
+}
+
+increments = {"Excellent": 20, "Good": 15, "Average": 10, "Poor": 5}
+
+for name, info in employees.items():
+    pct = increments[info["rating"]]
+    new_salary = info["salary"] * (1 + pct/100)
+    print(f"{name}: Updated Salary = ${round(new_salary,2)}")
+
+
+-------------------------------------------------------------------------------------------------------------
+
+Task 15: Stock Replenishment Planning
+# Task 15
+products = [
+    {"name": "Product A", "stock": 50},
+    {"name": "Product B", "stock": 150},
+    {"name": "Product C", "stock": 30},
+    {"name": "Product D", "stock": 75},
+    {"name": "Product E", "stock": 20}
+]
+threshold = 40
+
+print("Products that need replenishment:")
+for p in products:
+    if p["stock"] < threshold:
+        print(p["name"])
+
